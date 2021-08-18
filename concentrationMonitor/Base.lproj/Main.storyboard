@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="csP-Cl-Z5x">
     <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="concentrationMonitor" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,6 +30,9 @@
                                         <state key="normal" title="Concentration Analysis">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Xw4-0L-kW4" kind="show" id="IUV-kR-gqq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KX8-i2-t7m">
                                         <rect key="frame" x="0.0" y="160" width="450" height="110"/>
@@ -42,6 +45,9 @@
                                         <state key="normal" title="Driver Monitor">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="flC-Bt-PUM" kind="show" id="I9b-0F-fXE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -53,8 +59,78 @@
                             <constraint firstItem="ApG-RC-UtK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rxl-R2-88z"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Home" id="2wi-ad-72C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712.88433382137623" y="88.4765625"/>
+        </scene>
+        <!--Concentration Analysis-->
+        <scene sceneID="pzn-sC-K77">
+            <objects>
+                <viewController id="Xw4-0L-kW4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d8g-m0-bFY">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WMn-BB-L4B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Concentration Analysis" id="EbO-Hm-Dag"/>
+                    <connections>
+                        <segue destination="M0X-dt-NMK" kind="show" id="Rsw-tL-JUC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sVz-jk-Lvg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1431.9180087847731" y="-379.1015625"/>
+        </scene>
+        <!--Result-->
+        <scene sceneID="EZZ-po-Amh">
+            <objects>
+                <viewController id="M0X-dt-NMK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4hn-1J-Wx3">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fF5-Mn-yqn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Result" id="g7q-4L-Nfk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x1w-MW-Qyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2240.1171303074671" y="-379.1015625"/>
+        </scene>
+        <!--Driver Monitor-->
+        <scene sceneID="85Y-nE-EHv">
+            <objects>
+                <viewController id="flC-Bt-PUM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yF1-G1-Oxr">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PTh-QX-fGj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Driver Monitor" id="DwD-pb-h2g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCE-w8-hwE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1431.9180087847731" y="546.6796875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="maR-07-hdQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="csP-Cl-Z5x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gfd-7G-LUj">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YfQ-Wc-gov"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iUT-Xt-MmL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="19.765739385065885" y="88.4765625"/>
         </scene>
