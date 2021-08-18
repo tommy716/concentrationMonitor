@@ -13,7 +13,23 @@
 		65419A3826CCADD80036F4CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65419A3626CCADD80036F4CB /* Main.storyboard */; };
 		65419A3A26CCADDA0036F4CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65419A3926CCADDA0036F4CB /* Assets.xcassets */; };
 		65419A3D26CCADDA0036F4CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65419A3B26CCADDA0036F4CB /* LaunchScreen.storyboard */; };
+		65419A4A26CD30350036F4CB /* MPIrisTrackerH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65419A4526CD2FB50036F4CB /* MPIrisTrackerH.framework */; };
+		65419A4B26CD30350036F4CB /* MPIrisTrackerH.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 65419A4526CD2FB50036F4CB /* MPIrisTrackerH.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		65419A4C26CD30350036F4CB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				65419A4B26CD30350036F4CB /* MPIrisTrackerH.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		65419A2D26CCADD80036F4CB /* concentrationMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = concentrationMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +40,8 @@
 		65419A3926CCADDA0036F4CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65419A3C26CCADDA0036F4CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65419A3E26CCADDA0036F4CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65419A4526CD2FB50036F4CB /* MPIrisTrackerH.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MPIrisTrackerH.framework; sourceTree = "<group>"; };
+		65419A4726CD2FED0036F4CB /* concentrationMonitor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "concentrationMonitor-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65419A4A26CD30350036F4CB /* MPIrisTrackerH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +75,7 @@
 		65419A2F26CCADD80036F4CB /* concentrationMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				65419A4426CD2F990036F4CB /* Frameworks */,
 				65419A3026CCADD80036F4CB /* AppDelegate.swift */,
 				65419A3226CCADD80036F4CB /* SceneDelegate.swift */,
 				65419A3426CCADD80036F4CB /* ViewController.swift */,
@@ -63,8 +83,17 @@
 				65419A3926CCADDA0036F4CB /* Assets.xcassets */,
 				65419A3B26CCADDA0036F4CB /* LaunchScreen.storyboard */,
 				65419A3E26CCADDA0036F4CB /* Info.plist */,
+				65419A4726CD2FED0036F4CB /* concentrationMonitor-Bridging-Header.h */,
 			);
 			path = concentrationMonitor;
+			sourceTree = "<group>";
+		};
+		65419A4426CD2F990036F4CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65419A4526CD2FB50036F4CB /* MPIrisTrackerH.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +106,7 @@
 				65419A2926CCADD80036F4CB /* Sources */,
 				65419A2A26CCADD80036F4CB /* Frameworks */,
 				65419A2B26CCADD80036F4CB /* Resources */,
+				65419A4C26CD30350036F4CB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -98,6 +128,7 @@
 				TargetAttributes = {
 					65419A2C26CCADD80036F4CB = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -286,8 +317,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2P44D5B93M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/concentrationMonitor/Frameworks",
+				);
 				INFOPLIST_FILE = concentrationMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -295,6 +331,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.tommy.concentrationMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "concentrationMonitor/concentrationMonitor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -305,8 +343,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2P44D5B93M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/concentrationMonitor/Frameworks",
+				);
 				INFOPLIST_FILE = concentrationMonitor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -314,6 +357,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.tommy.concentrationMonitor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "concentrationMonitor/concentrationMonitor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
