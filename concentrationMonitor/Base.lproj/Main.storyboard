@@ -11,7 +11,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="concentrationMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,16 +68,22 @@
         <!--Concentration Analysis-->
         <scene sceneID="pzn-sC-K77">
             <objects>
-                <viewController id="Xw4-0L-kW4" sceneMemberID="viewController">
+                <viewController id="Xw4-0L-kW4" customClass="ConcentrationAnalysisViewController" customModule="concentrationMonitor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d8g-m0-bFY">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="WMn-BB-L4B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Concentration Analysis" id="EbO-Hm-Dag"/>
+                    <navigationItem key="navigationItem" title="Concentration Analysis" id="EbO-Hm-Dag">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="O2v-7m-Gnc">
+                            <connections>
+                                <action selector="toResult" destination="Xw4-0L-kW4" id="pTe-Ap-7U2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <segue destination="M0X-dt-NMK" kind="show" id="Rsw-tL-JUC"/>
+                        <segue destination="M0X-dt-NMK" kind="show" identifier="toResult" id="Rsw-tL-JUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sVz-jk-Lvg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -87,7 +93,7 @@
         <!--Result-->
         <scene sceneID="EZZ-po-Amh">
             <objects>
-                <viewController id="M0X-dt-NMK" sceneMemberID="viewController">
+                <viewController id="M0X-dt-NMK" customClass="AnalysisResultViewController" customModule="concentrationMonitor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4hn-1J-Wx3">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
