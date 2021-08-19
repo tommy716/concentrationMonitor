@@ -59,8 +59,6 @@ extension DriverMonitorViewController: MPTrackerDelegate {
             let distanceLeft = leftEye!.calculateDistance(from: landmarks[0])
             let distanceRight = rightEye!.calculateDistance(from: landmarks[5])
             
-            print((Double((distanceLeft + distanceRight)) / 2))
-            
             if (Double((distanceLeft + distanceRight)) / 2) > threshold && timer == nil {
                 timer = Timer.scheduledTimer(
                     timeInterval: 0.1,
