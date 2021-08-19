@@ -17,13 +17,25 @@ class ConcentrationAnalysisViewController: UIViewController {
     let waitingTime = 1.5
     
     var concentrationData: [Int] = []
+    var timer: Timer?
+    var timerCount = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        timer = Timer.scheduledTimer(
+            timeInterval: 0.1,
+            target: self,
+            selector: #selector(self.timerCounter),
+            userInfo: nil,
+            repeats: true)
         irisTracker = MPIrisTrackerH()
         irisTracker.delegate = self
         irisTracker.start()
+    }
+    
+    @objc func timerCounter() {
+        timerCount += 0.1
     }
     
     @IBAction func toResult() {
@@ -34,6 +46,7 @@ class ConcentrationAnalysisViewController: UIViewController {
         if segue.identifier == "toResult" {
             let destination = segue.destination as! AnalysisResultViewController
             destination.concentrationData = self.concentrationData
+            destination.time = self.timerCount
         }
     }
 }
