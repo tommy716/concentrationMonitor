@@ -18,13 +18,13 @@ class ConcentrationAnalysisViewController: UIViewController {
     
     var concentrationData: [Int] = []
     var timer: Timer?
-    var timerCount = 0.0
+    var timerCount = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         timer = Timer.scheduledTimer(
-            timeInterval: 0.1,
+            timeInterval: 1.0,
             target: self,
             selector: #selector(self.timerCounter),
             userInfo: nil,
@@ -35,7 +35,7 @@ class ConcentrationAnalysisViewController: UIViewController {
     }
     
     @objc func timerCounter() {
-        timerCount += 0.1
+        timerCount += 1
     }
     
     @IBAction func toResult() {

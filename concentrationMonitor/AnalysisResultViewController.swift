@@ -10,12 +10,18 @@ import UIKit
 class AnalysisResultViewController: UIViewController {
     
     var concentrationData: [Int] = []
-    var time: Double!
+    var time: Int!
+    
+    @IBOutlet var resultLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print(Float(concentrationData.reduce(0, +)) / Float(concentrationData.count))
+        let result = (Float(concentrationData.reduce(0, +)) / Float(concentrationData.count)) * 100
+        
+        resultLabel.text = String(format: "%.01f", result) + "%"
+        timeLabel.text = "\(time / 60):\(String(format: "%02d", (time % 60)))"
     }
 }
