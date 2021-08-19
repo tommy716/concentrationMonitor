@@ -19,6 +19,8 @@ class ConcentrationAnalysisViewController: UIViewController {
     var concentrationData: [Int] = []
     var timer: Timer?
     var timerCount = 0
+    
+    @IBOutlet var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,5 +79,9 @@ extension ConcentrationAnalysisViewController: MPTrackerDelegate {
     
     func frameDidUpdate(_ tracker: MPIrisTrackerH!, didOutputPixelBuffer pixelBuffer: CVPixelBuffer!) {
         // Pixel Buffer is anotated image
+        guard let image = UIImage(pixelBuffer: pixelBuffer) else { return }
+        DispatchQueue.main.async {
+            self.imageView.image = image
+        }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class DriverMonitorViewController: UIViewController {
     
@@ -14,10 +15,13 @@ class DriverMonitorViewController: UIViewController {
     var leftEye: Eye?
     var rightEye: Eye?
     let threshold = 0.014672
-    let waitingTime = 1.5
+    let waitingTime = 2.0
     
     var timer: Timer?
     var timerCount = 0.0
+    
+    @IBOutlet var backgroundView: UIView!
+    @IBOutlet var statusLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +33,15 @@ class DriverMonitorViewController: UIViewController {
     
     @objc func timerCounter() {
         timerCount += 0.1
-//        print(timerCount)
-        if timerCount >= waitingTime {
-            print("Not Concentrated")
+        if timerCount >= threshold {
+            DispatchQueue.main.async {
+                self.backgroundView.backgroundColor = .red
+                self.statusLabel.text = "Not Concentrated"
+                let soundIdRing: SystemSoundID = 1304
+                AudioServicesPlaySystemSound(soundIdRing)
+                self.timerCount = 0.0
+                self.timer?.invalidate()
+            }
         }
     }
 }
@@ -63,6 +73,10 @@ extension DriverMonitorViewController: MPTrackerDelegate {
                 timer!.invalidate()
                 timer = nil
                 timerCount = 0.0
+                DispatchQueue.main.async {
+                    self.backgroundView.backgroundColor = .systemGreen
+                    self.statusLabel.text = "Concentrated"
+                }
             }
         }
     }

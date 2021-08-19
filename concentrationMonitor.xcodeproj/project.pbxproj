@@ -19,6 +19,7 @@
 		65419A5026CD3A180036F4CB /* cordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419A4F26CD3A180036F4CB /* cordinate.swift */; };
 		65419A5226CE55720036F4CB /* DriverMonitorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419A5126CE55720036F4CB /* DriverMonitorViewController.swift */; };
 		65419A5426CE56430036F4CB /* AnalysisResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419A5326CE56430036F4CB /* AnalysisResultViewController.swift */; };
+		65419A5626CE5CA30036F4CB /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65419A5526CE5CA30036F4CB /* UIImage+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,7 @@
 		65419A4F26CD3A180036F4CB /* cordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cordinate.swift; sourceTree = "<group>"; };
 		65419A5126CE55720036F4CB /* DriverMonitorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverMonitorViewController.swift; sourceTree = "<group>"; };
 		65419A5326CE56430036F4CB /* AnalysisResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResultViewController.swift; sourceTree = "<group>"; };
+		65419A5526CE5CA30036F4CB /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				65419A4F26CD3A180036F4CB /* cordinate.swift */,
 				65419A5126CE55720036F4CB /* DriverMonitorViewController.swift */,
 				65419A5326CE56430036F4CB /* AnalysisResultViewController.swift */,
+				65419A5526CE5CA30036F4CB /* UIImage+.swift */,
 			);
 			path = concentrationMonitor;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				65419A5426CE56430036F4CB /* AnalysisResultViewController.swift in Sources */,
 				65419A3326CCADD80036F4CB /* SceneDelegate.swift in Sources */,
 				65419A4E26CD3A040036F4CB /* Eye.swift in Sources */,
+				65419A5626CE5CA30036F4CB /* UIImage+.swift in Sources */,
 				65419A5026CD3A180036F4CB /* cordinate.swift in Sources */,
 				65419A5226CE55720036F4CB /* DriverMonitorViewController.swift in Sources */,
 			);
